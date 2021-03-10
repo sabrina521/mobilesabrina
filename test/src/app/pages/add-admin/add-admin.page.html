@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Item Details</ion-title>
+      <ion-buttons slot="start" routerLink="/admin">
+        <ion-button color="dark">
+          <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+     <form [formGroup]="productForm">
+      <ion-item>
+        <ion-label position="stacked">Product Name</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Price (RM)</ion-label>
+        <ion-input formControlName="price"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Stock</ion-label>
+        <ion-input type="number" formControlName="stock"></ion-input>
+      </ion-item>
+
+     <ion-item>
+      <div class="image-container">
+        <ion-image *ngIf="imagePath" class="image-preview">
+          <ion-img [src]="imagePath"> </ion-img>
+        </ion-image>
+    </div>
+</ion-item>
+
+
+ 
+<section class="full-width">
+  <ion-button  (click)="takePicture()" expand="full" colour="light"><ion-icon name="cloud-upload-outline"></ion-icon>Upload Image</ion-button>
+  </section>
+  
+  <section class="full-width">
+    <ion-button  (click)="addProduct()" expand="full" colour="dark"><ion-icon name="add-circle-outline"></ion-icon>Add Products</ion-button>
+    </section>
+
+  
+
+     
+
+    </form>
+  </ion-content>

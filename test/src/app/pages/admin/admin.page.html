@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title class="ion-text-center">PRODUCT</ion-title>
+
+    <ion-buttons slot="start" (click)="logOut()">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="log-out-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" routerLink="/add-admin">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="add-circle-outline" size="large"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
+
+   
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card" (click)="productClicked(product.id)" *ngFor="let product of products">
+
+  <ion-item lines="none">
+      <ion-img [src]="product.imageUrl"></ion-img>
+  </ion-item>
+
+<ion-item>
+  <ion-label>
+      <ion-text> <p> {{product.name}} </p>
+        <p> RM {{product.price}} </p>
+        <p>Stock:{{product.stock}}</p>
+ 
+      </ion-text>
+      <p><ion-button  size="small" routerLink="/edit-admin" color="dark">EDIT</ion-button></p>
+  </ion-label>
+</ion-item>
+</ion-card>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-avatar class="center">
+      <img src="assets/image.jfif">
+    </ion-avatar>
+    <h2><ion-title class="ion-text-center">Available Juice</ion-title></h2>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  
+  <ion-toolbar>
+    <ion-buttons slot="end" routerLink="/admin">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="chevron-forward-circle-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar>
+</ion-toolbar>
+<div *ngFor="let item of items">
+<ion-list>
+  <ion-item>
+    <ion-avatar>
+      <img src="{{item.pic}}" />
+    </ion-avatar>
+  {{item.title}}
+</ion-item>
+</ion-list>
+</div>
+</ion-content>
+

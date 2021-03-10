@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LOGIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+  <form class="form" [formGroup]="signupForm" (ngSubmit)="signinUser(signupForm.value)">
+
+ <div style="margin-top: 7vh">
+  <ion-img [src]="jus.jpg"></ion-img>
+  <ion-item>
+    <ion-label position="stacked" color="dark">Email</ion-label>
+    <ion-input type="text" formControlName="email" class="form-control" required></ion-input>
+  </ion-item>
+  </div>
+
+  <ion-item>
+    <ion-label position="stacked" color="dark">Password</ion-label>
+    <ion-input type="password" formControlName="password" class="form-control" required></ion-input>
+  </ion-item>
+
+
+   <ion-button share="round" class="submit-btn" type="submit" (click)="handleSignUp()" shape="round" color="medium">Signup</ion-button>
+   
+  </form>
+ </div>
+</ion-content>
+
+
